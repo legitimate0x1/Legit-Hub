@@ -9,7 +9,7 @@ end)
 if result ~= nil and Info ~= nil then
     invCode = Info.invCode
 else
-    return warn("[LEGIT] An error occurred while inviting you.")
+    return warn("[LH] An error occurred while inviting you.")
 end
 
 pcall(
