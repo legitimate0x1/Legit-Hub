@@ -1,0 +1,35 @@
+-- Made by ArasOfficial#8439
+
+local req = syn and syn.request or http and http.request or http_request or getgenv().request or request or fluxus and fluxus.request
+
+local result, Info = pcall(function()
+	return game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/legitimate0x1/Dark-Ware/main/Version"))
+end)
+
+if result ~= nil and Info ~= nil then
+    invCode = Info.invCode
+else
+    return warn("[LEGIT] An error occurred while inviting you.")
+end
+
+pcall(
+    function()
+        req(
+            {
+                Url = "http://localhost:6463/rpc?v=1", -- 127.0.0.1:6463/rpc?v=1
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json",
+                    Origin = "https://discord.com"
+                },
+                Body = game:GetService("HttpService"):JSONEncode(
+                    {
+                        cmd = "INVITE_BROWSER",
+                        nonce = game:GetService("HttpService"):GenerateGUID(false),
+                        args = {code = invCode}
+                    }
+                )
+            }
+        )
+    end
+)
