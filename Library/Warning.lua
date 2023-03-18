@@ -4,13 +4,13 @@ if not game:GetService("CoreGui").RobloxGui:FindFirstChild("__0x1") then
     Instance.new("Folder", game:GetService("CoreGui"):FindFirstChild("RobloxGui")).Name = "__0x1"
 end
 
-if not game:GetService("CoreGui").RobloxGui.__0x1:FindFirstChild("Warning") then
+--if not game:GetService("CoreGui").RobloxGui.__0x1:FindFirstChild("Warning") then
     local GUI = Instance.new("ScreenGui")
     local GUI = Instance.new("ScreenGui")
     GUI.Name = "Warning"
     GUI.Parent = game:GetService("CoreGui").RobloxGui.__0x1
     GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling     
-end
+--end
 
 function NotificationLibrary:Notify(TitleText, Desc, Delay)
     local Notification = Instance.new("Frame")
