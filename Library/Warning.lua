@@ -6,7 +6,6 @@ end
 
 if not game:GetService("CoreGui").RobloxGui.__0x1:FindFirstChild("Warning") then
     local GUI = Instance.new("ScreenGui")
-    local GUI = Instance.new("ScreenGui")
     GUI.Name = "Warning"
     GUI.Parent = game:GetService("CoreGui").RobloxGui.__0x1
     GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling     
