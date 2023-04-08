@@ -30,13 +30,14 @@ end
 
 local mt = getrawmetatable(game)
 setreadonly(mt, false)
-old = mt.__index
+local Old
 
-mt.__index = newcclosure(function(o, p)
-	local t = findwithintable(o, p)
-	if t ~= nil then
-		return t[3]
-	end
-	
-	return old(o, p)
-end)
+Old = hookfunction(mt.__index, newcclosure(function(o, p)
+      local t = findwithintable(o, p)
+
+      if t ~= nil then
+		  return t[3]
+	  end
+
+      return Old(o, p)
+end))
