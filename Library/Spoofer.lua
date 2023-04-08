@@ -1,4 +1,5 @@
 -- Made by Newmat
+-- Secured by ArasOfficial#8439
 
 _G.objs = {}
 
