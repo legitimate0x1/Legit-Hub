@@ -1,5 +1,9 @@
 -- Made by ArasOfficial#8439
 
+if RCLNotifications then
+    return 
+end
+
 if not rconsolename then
     return warn("[Notification-Library]: Your exploit is not supported! Missing Function: rconsolename()")
 end
@@ -51,3 +55,5 @@ getgenv().Notify = function(ConsoleName, Type, Message)
         rconsoleprint(Message .. " \n")
     end
 end
+
+getgenv().RCLNotifications = true
