@@ -116,3 +116,12 @@ getgenv().activatetools = function(Number)
         end
     end
 end
+
+getgenv().Rejoin = function()
+	if #Players:GetPlayers() == 1 then
+		LocalPlayer:Kick("Rejoining...")
+		TeleportService:Teleport(game.PlaceId)
+	else
+		TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+	end
+end
