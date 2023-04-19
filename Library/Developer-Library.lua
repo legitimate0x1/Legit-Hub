@@ -22,6 +22,7 @@ getgenv().RunService = game:GetService("RunService")
 getgenv().Players = game:GetService("Players")
 getgenv().LocalPlayer = Players.LocalPlayer
 getgenv().Mouse = LocalPlayer:GetMouse ""
+getgenv().Camera = Workspace:FindFirstChildWhichIsA("Camera")
 
 getgenv().Character = function(Player)
     if not Player then
