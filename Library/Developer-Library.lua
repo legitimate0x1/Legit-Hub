@@ -83,7 +83,7 @@ getgenv().equiptools2 = function()
     end
 end
 
-local ReplaceCharacter = function(Character) -- By Fates.
+getgenv().ReplaceCharacter = function(Character) -- By Fates.
     local Char = LocalPlayer.Character or Character() or Character
     local Model = Instance.new("Model")
     LocalPlayer.Character = Model
@@ -92,7 +92,7 @@ local ReplaceCharacter = function(Character) -- By Fates.
     return Char
 end
 
-local ReplaceHumanoid = function(Hum, R) -- By Fates.
+getgenv().local ReplaceHumanoid = function(Hum, R) -- By Fates.
     local Humanoid = Hum or Humanoid()
     local NewHumanoid = Humanoid:Clone()
     if (R) then
