@@ -152,6 +152,6 @@ getgenv().Serverhop = function()
 	if #ServerList > 0 then
 		TeleportServer(game.PlaceId, ServerList[math.random(1, #ServerList)])
 	else
-		print("[Error]: No servers found!")
+		if LH_Notify then LH_Notify({ title = "Legit Hub", message = "No servers found!", duration = 5}) else print("[Error]: No servers found!") end
 	end
 end
