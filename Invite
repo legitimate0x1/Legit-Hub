@@ -1,6 +1,6 @@
 -- Made by ArasOfficial#8439
 
-local req = syn and syn.request or http and http.request or http_request or getgenv().request or request or fluxus and fluxus.request
+local req = syn and syn.request or http and http.request or http_request or request or fluxus and fluxus.request
 
 local result, Info = pcall(function()
 	return game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/legitimate0x1/Dark-Ware/main/Version"))
