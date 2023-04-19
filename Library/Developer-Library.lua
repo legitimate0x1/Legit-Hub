@@ -18,6 +18,7 @@ getgenv().SoundService = game:GetService("SoundService")
 getgenv().Lighting = game:GetService("Lighting")
 getgenv().ScriptContext = game:GetService("ScriptContext")
 getgenv().Stats = game:GetService("Stats")
+getgenv().RunService = game:GetService("RunService")
 getgenv().Players = game:GetService("Players")
 getgenv().LocalPlayer = Players.LocalPlayer
 
