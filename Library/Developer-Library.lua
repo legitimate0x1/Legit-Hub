@@ -122,6 +122,8 @@ getgenv().GetServers = function(PlaceId)
 end
 
 getgenv().TeleportServer = function(PlaceId, JobId)
+	if not PlaceId and not JobId then return warn("[Error]: Teleport failed!") end
+	
 	if not JobId then
 		TeleportService:Teleport(PlaceId)
 	else
