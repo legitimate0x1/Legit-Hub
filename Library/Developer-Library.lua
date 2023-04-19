@@ -140,4 +140,18 @@ getgenv().Rejoin = function()
 	end
 end
 
+getgenv().Serverhop = function()
+	local ServerList = {}
 
+	for _, v in ipairs(GetServers(game.PlaceId)) do
+		if v.playing and type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			ServerList[#ServerList + 1] = v.id
+		end
+	end
+
+	if #ServerList > 0 then
+		TeleportServer(game.PlaceId, ServerList[math.random(1, #ServerList)])
+	else
+		print("[Error]: No servers found!")
+	end
+end
