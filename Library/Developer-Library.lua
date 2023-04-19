@@ -92,7 +92,7 @@ getgenv().ReplaceCharacter = function(Character) -- By Fates.
     return Char
 end
 
-getgenv().local ReplaceHumanoid = function(Hum, R) -- By Fates.
+getgenv().ReplaceHumanoid = function(Hum, R) -- By Fates.
     local Humanoid = Hum or Humanoid()
     local NewHumanoid = Humanoid:Clone()
     if (R) then
