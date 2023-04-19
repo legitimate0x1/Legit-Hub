@@ -117,11 +117,25 @@ getgenv().activatetools = function(Number)
     end
 end
 
+getgenv().GetServers = function(PlaceId)
+	return HttpService:JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data
+end
+
+getgenv().TeleportServer = function(PlaceId, JobId)
+	if not JobId then
+		TeleportService:Teleport(PlaceId)
+	else
+		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, LocalPlayer)
+	end
+end
+
 getgenv().Rejoin = function()
 	if #Players:GetPlayers() == 1 then
 		LocalPlayer:Kick("Rejoining...")
-		TeleportService:Teleport(game.PlaceId)
+		TeleportServer(game.PlaceId)
 	else
-		TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+		TeleportServer(game.PlaceId, game.JobId)
 	end
 end
+
+
