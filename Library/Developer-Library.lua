@@ -83,6 +83,28 @@ getgenv().equiptools2 = function()
     end
 end
 
+local ReplaceCharacter = function(Character) -- By Fates.
+    local Char = LocalPlayer.Character or Character() or Character
+    local Model = Instance.new("Model")
+    LocalPlayer.Character = Model
+    LocalPlayer.Character = Char
+    Model:Destroy()
+    return Char
+end
+
+local ReplaceHumanoid = function(Hum, R) -- By Fates.
+    local Humanoid = Hum or Humanoid()
+    local NewHumanoid = Humanoid:Clone()
+    if (R) then
+        NewHumanoid.Name = "1"
+    end
+    NewHumanoid.Parent = Humanoid.Parent -- NewHumanoid.Parent = Character()
+    NewHumanoid.Name = Humanoid.Name
+    Camera.CameraSubject = NewHumanoid
+    Humanoid:Destroy()
+    return NewHumanoid
+end
+
 getgenv().activatetools = function(Number)
     for i,v in pairs(Character():GetChildren()) do
         if v:IsA("Tool") then
