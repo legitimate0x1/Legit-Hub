@@ -155,3 +155,12 @@ getgenv().Serverhop = function()
 		if LH_Notify then LH_Notify({ title = "Legit Hub", message = "No servers found!", duration = 5}) else print("[Error]: No servers found!") end
 	end
 end
+
+getgenv().randomString = function() -- By IY
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
