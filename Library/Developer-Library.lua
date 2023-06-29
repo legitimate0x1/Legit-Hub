@@ -80,7 +80,7 @@ LH.HasForcefield = function(Player)
 	return false
 end
 
-LH.equiptools = function()
+LH.EquipTools = function()
 	for i,v in pairs(LH.LocalPlayer.Backpack) do
 		if v:IsA("Tool") then
 			v.Parent = Character()
@@ -100,7 +100,7 @@ LH.filter = function(tbl, ret) -- By Fates.
 	end
 end
 
-LH.equiptools2 = function() -- By Fates.
+LH.EquipTools2 = function() -- By Fates.
 	local Tools = filter(game.GetChildren(LH.LocalPlayer.Backpack), function(i, Child)
 		return game.IsA(Child, "Tool")
 	end)
@@ -132,7 +132,7 @@ LH.ReplaceHumanoid = function(Hum, R) -- By Fates.
 	return NewHumanoid
 end
 
-LH.activatetools = function(Number)
+LH.ActivateTools = function(Number)
 	for i,v in pairs(LH.Character():GetChildren()) do
 		if v:IsA("Tool") then
 			for i=1, Number do
