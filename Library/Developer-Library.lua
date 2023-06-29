@@ -54,6 +54,32 @@ LH.IsR6 = function(Player)
 	end
 end
 
+LH.IsFrozen = function(Player)
+	for i,v in pairs(LH.Character(Player):GetChildren()) do
+		if v:IsA("BasePart") and v.Anchored then
+			return true
+		end
+	end
+
+	return false
+end
+
+LH.IsInvincible = function(Player)
+	if Player.Character:FindFirstChildOfClass("Humanoid").Health == math.huge or Player.Character:FindFirstChildOfClass("Humanoid").MaxHealth == math.huge then
+		return true
+	end
+
+	return false
+end
+
+LH.HasForcefield = function(Player)
+	if LH.Character(Player):FindFirstChildWhichIsA("ForceField") then
+		return true
+	end
+
+	return false
+end
+
 LH.equiptools = function()
 	for i,v in pairs(LH.LocalPlayer.Backpack) do
 		if v:IsA("Tool") then
