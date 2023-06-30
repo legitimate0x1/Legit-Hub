@@ -1352,7 +1352,7 @@ function library:init()
                     Parent = objs.background;
                 })
 
-                local DecodeBase64 = base64_decode or syn.crypt.base64.decode
+                local DecodeBase64 = base64_decode or syn and syn.crypt.base64.decode
 
                 objs.sat1 = utility:Draw('Image', {
                     Size = newUDim2(1,0,1,0);
